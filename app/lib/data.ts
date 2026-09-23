@@ -11,11 +11,6 @@ import { formatCurrency } from './utils';
 
 const databaseUrl = process.env.POSTGRES_URL;
 
-console.log({
-  hasPostgresUrl: Boolean(databaseUrl),
-  databaseHost: databaseUrl ? new URL(databaseUrl).hostname : null,
-});
-
 const sql = postgres(databaseUrl!, { ssl: 'require' });
 
 export async function fetchRevenue() {
